@@ -4,16 +4,16 @@
 A deep learning chess bot that uses CNN and RNN to play chess. Architecture includes a dense layer, reshape layer, convolutional layer, max pooling layer, flatten layer, LSTM layer, and another dense layer. NeuroChess training and optimizations are in development. 
 </p>
 
-#Installations and Dependencies 
+##Installations and Dependencies 
 
-*tfjs-node
-*ReactDOM
-*Chess.js
-*Chessboardjsx
-*@tensorflow/tfjs
-*@tensorflow/tfjs-layers
-*PapaParse
-*Typescript
+* tfjs-node
+* ReactDOM
+* Chess.js
+* Chessboardjsx
+* @tensorflow/tfjs
+* @tensorflow/tfjs-layers
+* PapaParse
+* Typescript
 
 
 
