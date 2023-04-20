@@ -6,7 +6,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 
 
 ---
-<h3 >Installations and Dependencies</h1>
+<h3 >Installations and Dependencies</h3>
 ---
 
 
