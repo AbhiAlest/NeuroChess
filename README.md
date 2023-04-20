@@ -5,7 +5,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 </p>
 
 <h3> Installations and Dependencies </h3> 
-<p>
+
 * tfjs-node
 * ReactDOM
 * Chess.js
@@ -14,7 +14,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 * @tensorflow/tfjs-layers
 * PapaParse
 * Typescript
-</p>
+
 
 
 </div>
