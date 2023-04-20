@@ -73,5 +73,18 @@ csv()
     }).then((history) => {
       console.log(history);
       model.save('model');
-    });
-  });
+      const gameTensor = tf.tensor2d([
+  [2000, 1800, 5, 1, 7, 9, 11, 2, 4, 6],
+  [1800, 2000, 5, 1, 7, 9, 11, 2, 4, 6],
+  [2000, 1800, 5, 1, 7, 9, 11, 2, 4, 6],
+  [1800, 2000, 5, 1, 7, 9, 11, 2, 4, 6]
+]);
+  const normalizedGameTensor = gameTensor.sub(dataMean).div(dataStd);
+  const predictionTensor = model.predict(normalizedGameTensor);
+  const prediction = predictionTensor.dataSync()[0];
+  console.log(`The model predicts that the player ${prediction > 0.5 ? 'will win' : 'will lose'}.`);
+  if (prediction > 0.5) {
+    console.log("It looks like you're winning. Keep up the good work!");
+  } else {
+    console.log("It looks like you're losing. Try to make some different moves and see if you can turn things around!");
+  }
