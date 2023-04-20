@@ -6,6 +6,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 
 <h3> Installations and Dependencies </h3> 
 <br />
+<p align="center">
   
   
 * tfjs-node
@@ -17,10 +18,9 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 * PapaParse
 * Typescript
 
+</p>
 
 
-</div>
-<br />
 <div align="center">
   <p> 
     <img src="https://github.com/AbhiAlest/NeuroChess/blob/main/Logo/NeuroChess.png?raw=true" alt = "NeuroChess Logo" >
