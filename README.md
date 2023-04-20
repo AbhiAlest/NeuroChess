@@ -36,7 +36,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 <h3 >Development and Production</h3>
 
 Development
-1. Clone the repository and install prequisites.
+1. Clone the repository and install prerequisites.
 2. Navigate to the project directory via the terminal.
 3. Run 'yarn install' for dependencies and 'yarn start' for the development server.
 4. For the app, navigate to 'http://localhost:3000'
