@@ -1,45 +1,51 @@
 import React, { useState } from "react";
 import Chessboard from "chessboardjsx";
 import Chess from "chess.js";
-import { DeepLearningBot } from "./DeepLearningBot";
+import { predictBestMove, train, loadModel } from "./DeepLearningBot";
 
 const ChessGame = () => {
   const [chess] = useState(new Chess());
-  const [fen, setFen] = useState(chess.fen());
-  const [side, setSide] = useState("white");
+  const [board, setBoard] = useState(chess.board());
+  const [bestMove, setBestMove] = useState("");
+  const [botColor, setBotColor] = useState("black");
 
-  const handleMove = (from: string, to: string) => {
+  const handleMove = ({ from, to }: any) => {
     const move = chess.move({ from, to });
 
-    // illegal move
-    if (move === null) return;
+    if (move !== null) {
+      setBoard(chess.board());
+      setBestMove("");
 
-    // Update board
-    setFen(chess.fen());
+      if (chess.turn() === botColor) {
+        setTimeout(() => {
+          const botMove = predictBestMove(chess);
+          const move = chess.move(botMove);
+          if (move !== null) {
+            setBoard(chess.board());
+          }
+        }, 500);
+      }
 
-    // Switch sides between turns
-    setSide(side === "white" ? "black" : "white");
+      train(chess, 10);
+    }
+  };
 
-    // move and stuff
-    setTimeout(() => {
-      const botMove = DeepLearningBot.predictBestMove(chess);
-      chess.move(botMove);
-      setFen(chess.fen());
-      setSide("white");
-    }, 500);
+  const handleBestMove = () => {
+    const move = predictBestMove(chess);
+    setBestMove(move);
   };
 
   return (
     <div>
-      <Chessboard
-        position={fen}
-        onDrop={({ sourceSquare, targetSquare }) =>
-          handleMove(sourceSquare, targetSquare)
-        }
-        orientation={side}
-      />
+      <Chessboard position={board} onDrop={handleMove} />
+      <button onClick={handleBestMove}>Get Best Move</button>
+      {bestMove && <div>The best move is: {bestMove}</div>}
     </div>
   );
 };
+
+loadModel("path/to/trained/model.json").then(() => {
+  console.log("Model loaded");
+});
 
 export default ChessGame;
