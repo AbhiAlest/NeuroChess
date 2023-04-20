@@ -48,6 +48,7 @@ Development
 
 Production
 * npm run build
+* npm run start-proxy (Go server requests go to 'http://localhost:8080/api'
 
 ---
 
