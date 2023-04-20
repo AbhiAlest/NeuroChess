@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Chessboard from "chessboardjsx";
 import Chess from "chess.js";
-import { predictBestMove, train, loadModel } from "./DeepLearningBot";
+import { predictBestMove, trainModel, loadModel } from "./DeepLearningBot";
 
 const ChessGame = () => {
   const [chess] = useState(new Chess());
@@ -26,7 +26,7 @@ const ChessGame = () => {
         }, 500);
       }
 
-      train(chess, 10);
+      trainModel(chess, 10);
     }
   };
 
