@@ -22,7 +22,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 ---
 <h3 >Prerequisites</h3>
 
-* Click [Node.js](https://nodejs.org/en/download)
+* [Node.js](https://nodejs.org/en/download)
 * npm (type 'npm - v'
 * TypeScript 'npm install -g typescript'
 * React 'npm install -g create-react-app'
