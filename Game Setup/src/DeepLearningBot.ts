@@ -3,6 +3,20 @@ import { ChessInstance } from "chess.js";
 
 const model = await tf.loadLayersModel("path/to/model.json"); //replace with json path
 
+let trainingMode = false;
+let epochs = 1;
+
+export const toggleTrainingMode = () => {
+  trainingMode = !trainingMode;
+  if (trainingMode) {
+    console.log("Training mode enabled");
+    epochs = 1;
+  } else {
+    console.log("Training mode disabled");
+    epochs = 0;
+  }
+};
+
 export const predictBestMove = (chess: ChessInstance) => {
   const moves = chess.moves();
   let bestMove: string | null = null;
@@ -21,6 +35,10 @@ export const predictBestMove = (chess: ChessInstance) => {
       }
       chess.undo();
     }
+  }
+
+  if (trainingMode) {
+    trainModel(chess);
   }
 
   return bestMove as string;
@@ -70,4 +88,20 @@ const pieceToIndex = (piece: string | null): number => {
   } else {
     return pieceMap[piece];
   }
+};
+
+const trainModel = (chess: ChessInstance) => {
+  const outputTensor = tf.tensor1d([0]);
+  const inputTensor = preprocessInput(chess);
+
+  const optimizer = tf.train.adam(0.1);
+  const lossFunction = "meanSquaredError";
+
+  model.compile({
+    optimizer,
+    loss: lossFunction,
+  });
+
+  model.fit(inputTensor, outputTensor, { epochs });
+  epochs++;
 };
