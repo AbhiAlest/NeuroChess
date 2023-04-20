@@ -39,7 +39,7 @@ const ChessGame = () => {
     <div>
       <Chessboard position={board} onDrop={handleMove} />
       <button onClick={handleBestMove}>Get Best Move</button>
-      {bestMove && <div>The best move is: {bestMove}</div>}
+      {bestMove && <div>The best move according to NeuroChess is: {bestMove}</div>}
     </div>
   );
 };
