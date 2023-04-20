@@ -23,6 +23,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 * net/http
 * github.com/notnil/chess package
 
+
 ---
 <h3 >Prerequisites</h3>
 
@@ -33,6 +34,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 * TensorFlow.js 'npm install @tensorflow/tfjs'
 * Chess.js 'npm install chess.js'
 * Chessboardjsx 'npm install react-chessboardjsx'
+* express and http-proxy-middleware 'npm install express http-proxy-middleware'
 
 
 ---
