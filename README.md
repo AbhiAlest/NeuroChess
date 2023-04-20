@@ -18,7 +18,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 
 
 </div>
-
+<br />
 <div align="center">
   <p> 
     <img src="https://github.com/AbhiAlest/NeuroChess/blob/main/Logo/NeuroChess.png?raw=true" alt = "NeuroChess Logo" >
