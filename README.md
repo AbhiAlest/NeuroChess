@@ -29,6 +29,7 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 
 * [Node.js](https://nodejs.org/en/download)
 * npm 'npm - v'
+* 'npm install'
 * TypeScript 'npm install -g typescript'
 * React 'npm install -g create-react-app'
 * TensorFlow.js 'npm install @tensorflow/tfjs'
@@ -49,6 +50,7 @@ Development
 Production
 * npm run build
 * npm run start-proxy (Go server requests go to 'http://localhost:8080/api'
+* Start the server through the command 'yarn start-proxy'. API requests go to port 5000. 
 
 ---
 
