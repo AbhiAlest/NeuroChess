@@ -19,6 +19,9 @@ A deep learning chess bot that uses CNN and RNN to play chess. Architecture incl
 * @tensorflow/tfjs-layers
 * PapaParse
 * Typescript
+* encoding/json
+* net/http
+* github.com/notnil/chess package
 
 ---
 <h3 >Prerequisites</h3>
