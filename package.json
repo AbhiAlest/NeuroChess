@@ -1,8 +1,14 @@
 {
   "name": "NeuroChess",
   "version": "1.0.0",
-  "description": "A deep learning chess bot",
-  "main": "index.js",
+  "description": "A deep learning chess bot.",
+  "author": "AbhiAlest",
+  "contributors": [
+    {
+      "name": "AbhiAlest",
+    }
+  ],
+  "license": "GNU General Public License (3.0)",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -21,5 +27,21 @@
     "react-scripts": "4.0.3",
     "ws": "^8.4.0"
   },
-  "proxy": "http://localhost:5000"
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbhiAlest/NeuroChess"
+  },
+  "bugs": {
+    "url": "https://github.com/AbhiAlest/NeuroChess/issues"
+  },
+  "homepage": "https://github.com/AbhiAlest/NeuroChess#readme",
+  "config": {
+    "port": 5000
+  }
 }
